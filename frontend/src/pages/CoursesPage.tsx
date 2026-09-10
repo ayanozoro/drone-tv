@@ -89,11 +89,10 @@ export const CoursesPage: React.FC = () => {
           <button
             key={lvl}
             onClick={() => setSelectedLevel(lvl)}
-            className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
-              selectedLevel === lvl
+            className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${selectedLevel === lvl
                 ? 'bg-cyan-500 text-slate-950 font-bold shadow-md shadow-cyan-500/20'
                 : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-cyan-500/40 hover:text-white'
-            }`}
+              }`}
           >
             {lvl}
           </button>
