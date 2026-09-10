@@ -16,10 +16,7 @@ import {
   Lock,
 } from 'lucide-react';
 
-const ADMIN_PASSKEY =
-  import.meta.env.VITE_ADMIN_PASSCODE ||
-  import.meta.env.VITE_ADMIN_KEY ||
-  'dronetv2026';
+const ADMIN_PASSKEY = 'dronetv2026';
 
 export const AdminDashboardPage: React.FC = () => {
   // Admin Authentication State
