@@ -13,6 +13,8 @@ import { notFound } from './middleware/notFound.js';
 // Load environment variables
 dotenv.config();
 
+// Connect to MongoDB Atlas
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 

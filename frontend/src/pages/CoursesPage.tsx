@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CourseCard } from '../components/CourseCard';
 import { COURSES_DATA } from '../data/coursesData';
-import { GraduationCap, Award, CheckCircle } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 
 export const CoursesPage: React.FC = () => {
   const [selectedLevel, setSelectedLevel] = useState('All');
