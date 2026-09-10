@@ -7,7 +7,15 @@ import {
   PaginatedEnquiries,
 } from '../types';
 
-const rawBaseUrl = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000').trim().replace(/\/+$/, '');
+const DEFAULT_API_URL = import.meta.env.PROD
+  ? 'https://dronetv-backend-api.onrender.com'
+  : 'http://localhost:5000';
+
+const rawBaseUrl = (
+  import.meta.env.VITE_API_BASE_URL ||
+  import.meta.env.VITE_API_BASE_UR ||
+  DEFAULT_API_URL
+).trim().replace(/\/+$/, '');
 const API_BASE_URL = rawBaseUrl.endsWith('/api') ? rawBaseUrl.slice(0, -4) : rawBaseUrl;
 
 class ApiService {
