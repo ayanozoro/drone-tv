@@ -7,15 +7,21 @@ import {
   PaginatedEnquiries,
 } from '../types';
 
-const DEFAULT_API_URL = import.meta.env.PROD
-  ? 'https://dronetv-backend-api.onrender.com'
-  : 'http://localhost:5000';
+const LIVE_BACKEND_URL = 'https://dronetv-backend-api.onrender.com';
 
-const rawBaseUrl = (
+const envUrl = (
   import.meta.env.VITE_API_BASE_URL ||
   import.meta.env.VITE_API_BASE_UR ||
-  DEFAULT_API_URL
-).trim().replace(/\/+$/, '');
+  ''
+).trim();
+
+// In production (Vercel), never allow localhost. Always target the live Render API.
+const rawBaseUrl = (
+  import.meta.env.PROD
+    ? (envUrl && !envUrl.includes('localhost') ? envUrl : LIVE_BACKEND_URL)
+    : (envUrl || 'http://localhost:5000')
+).replace(/\/+$/, '');
+
 const API_BASE_URL = rawBaseUrl.endsWith('/api') ? rawBaseUrl.slice(0, -4) : rawBaseUrl;
 
 class ApiService {
