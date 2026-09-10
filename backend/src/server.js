@@ -21,12 +21,21 @@ const PORT = process.env.PORT || 5000;
 // Security HTTP headers
 app.use(helmet());
 
+// Private Network Access (PNA) header support
+app.use((req, res, next) => {
+  if (req.headers['access-control-request-private-network']) {
+    res.setHeader('Access-Control-Allow-Private-Network', 'true');
+  }
+  next();
+});
+
 // CORS configuration supporting local development and deployed production frontend
 const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:3000',
   'http://127.0.0.1:5173',
   'http://127.0.0.1:3000',
+  'https://drone-tv-xi.vercel.app',
 ];
 
 if (process.env.CLIENT_URL) {
@@ -44,14 +53,21 @@ app.use(
       // Allow requests with no origin (like mobile apps, curl, Postman)
       if (!origin) return callback(null, true);
 
-      if (allowedOrigins.includes(origin) || process.env.NODE_ENV !== 'production') {
+      let isVercel = false;
+      try {
+        isVercel = /\.vercel\.app$/.test(new URL(origin).hostname);
+      } catch {
+        isVercel = false;
+      }
+
+      if (allowedOrigins.includes(origin) || isVercel || process.env.NODE_ENV !== 'production') {
         return callback(null, true);
       }
       return callback(new Error(`CORS blocked for origin: ${origin}`));
     },
     credentials: true,
     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'x-admin-key'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'x-admin-key', 'Access-Control-Request-Private-Network'],
   })
 );
 
