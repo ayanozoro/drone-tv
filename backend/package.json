@@ -1,0 +1,29 @@
+{
+  "name": "dronetv-backend",
+  "version": "1.0.0",
+  "description": "Backend API for DroneTV AI Support & Lead Assistant",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node tests/api.test.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "mongoose": "^8.9.2"
+  },
+  "keywords": [
+    "drone",
+    "api",
+    "express",
+    "mongodb",
+    "mongoose"
+  ],
+  "author": "Mohit Uniyal",
+  "license": "MIT"
+}

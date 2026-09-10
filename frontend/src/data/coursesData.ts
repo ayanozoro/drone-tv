@@ -1,0 +1,101 @@
+import { CourseItem } from '../types';
+
+export const COURSES_DATA: CourseItem[] = [
+  {
+    id: 'dgca-remote-pilot-cert',
+    title: 'DGCA Certified Remote Pilot Certificate (RPC)',
+    pathwayLevel: 'LEVEL 01 — FOUNDATION',
+    category: 'Commercial UAS Licensing',
+    level: 'Beginner',
+    duration: '5 Days',
+    feeRange: '₹50,000 – ₹80,000',
+    description:
+      'Official Directorate General of Civil Aviation (DGCA) syllabus for Small and Medium UAV categories. The essential entry point into professional commercial drone operations across India.',
+    keyOutcomes: [
+      'Official DGCA-approved Remote Pilot Certificate (RPC)',
+      'DigitalSky registration, airspace zones & regulatory compliance',
+      'Extensive simulator sessions & 50+ supervised flight sorties',
+      'Emergency fail-safe procedures & pre-flight checklist mastery',
+    ],
+    certification: 'DGCA Certified RPC Pilot License',
+    rptoApproval: 'DGCA Approved RPTO',
+    popular: true,
+  },
+  {
+    id: 'gis-mapping-specialist',
+    title: 'GIS & Aerial Mapping Specialist Masterclass',
+    pathwayLevel: 'LEVEL 02 — SPECIALISATION',
+    category: 'Geospatial Engineering',
+    level: 'Intermediate',
+    duration: '15–30 Days',
+    feeRange: '₹30,000 – ₹80,000',
+    description:
+      'The highest-demand skill combination in India. Combine pilot certification with photogrammetry and spatial data analysis for infrastructure, survey, and smart city planning.',
+    keyOutcomes: [
+      'Photogrammetry processing with Pix4D & Agisoft Metashape',
+      'LiDAR point cloud filtering & survey-grade 3D contouring',
+      'QGIS, ArcGIS & CAD compatible spatial deliverable formats',
+      'GCP surveying using DGPS & RTK base-rover workflows',
+    ],
+    certification: 'DroneTV Certified Geospatial Analyst Credential',
+    rptoApproval: 'Industry-Accredited',
+    popular: true,
+  },
+  {
+    id: 'precision-agriculture-applicator',
+    title: 'Agriculture Drone Specialist & Crop Spraying',
+    pathwayLevel: 'LEVEL 03 — ADVANCED',
+    category: 'Precision AgriTech',
+    level: 'Intermediate',
+    duration: '5–10 Days',
+    feeRange: '₹20,000 – ₹50,000',
+    description:
+      'Precision agriculture is India’s fastest-growing drone vertical. Master micro-spraying calibration, droplet drift control, and multispectral crop health diagnosis.',
+    keyOutcomes: [
+      'Medium-class 10L–20L agricultural spraying maneuvers',
+      'Nozzle calibration, pump flow pressure & drift mitigation',
+      'NDVI / NDRE vegetation stress zoning prescription maps',
+      'Safe chemical handling & Namo Drone Didi operational standards',
+    ],
+    certification: 'DroneTV Agri-Drone Applicator License',
+    rptoApproval: 'AgriTech Industry Aligned',
+  },
+  {
+    id: 'certified-flight-instructor',
+    title: 'Certified Drone Flight Instructor (CFI)',
+    pathwayLevel: 'LEVEL 04 — EXPERT',
+    category: 'RPTO Academic Cadre',
+    level: 'Advanced',
+    duration: '10–15 Days',
+    feeRange: '₹60,000 – ₹90,000',
+    description:
+      'Train the next generation of drone pilots. India requires thousands more DGCA-qualified instructors to staff 240+ approved RPTOs across all states.',
+    keyOutcomes: [
+      'DGCA instructor certification criteria & testing methods',
+      'Aviation curriculum development & flight briefing pedagogy',
+      'Flight simulator instruction & emergency intervention controls',
+      'RPTO logbook auditing & regulatory quality compliance',
+    ],
+    certification: 'DGCA Certified Flight Instructor (CFI)',
+    rptoApproval: 'RPTO Faculty Track',
+  },
+  {
+    id: 'industrial-inspection-specialist',
+    title: 'Industrial Asset & Radiometric Thermography',
+    pathwayLevel: 'SPECIALIST TRACK',
+    category: 'Inspection & Maintenance',
+    level: 'Advanced',
+    duration: '3 Weeks',
+    feeRange: '₹40,000 – ₹75,000',
+    description:
+      'Advanced radiometric thermography for solar PV module inspection, high-voltage power transmission lines, wind turbine blades, and industrial assets.',
+    keyOutcomes: [
+      'Radiometric thermal sensor calibration & ISO defect standards',
+      'Powerline corona & solar hot-spot detection analytics',
+      'Automated waypoint flight plan design with RTK positioning',
+      'Client inspection report synthesis with AI defect tagging',
+    ],
+    certification: 'DroneTV Certified Industrial Thermographer',
+    rptoApproval: 'Enterprise Standard',
+  },
+];
